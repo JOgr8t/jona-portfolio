@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toggle Section</title>
+<style>
+  /* Styling for the hidden section */
+  #hidden-section {
+    display: none;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Anchor tag to toggle the section -->
+<a href="#" id="toggle-section">Toggle Section</a>
+
+<!-- Hidden section -->
+<div id="hidden-section">
+  <p>This is the hidden section. Click the close button to hide it.</p>
+  <button id="close-section">Close</button>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get reference to toggle button and hidden section
+    var toggleBtn = document.getElementById('toggle-section');
+    var hiddenSection = document.getElementById('hidden-section');
+    
+    // Add click event listener to toggle button
+    toggleBtn.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default anchor behavior
+      
+      // Toggle visibility of hidden section
+      if (hiddenSection.style.display === 'none') {
+        hiddenSection.style.display = 'block';
+      } else {
+        hiddenSection.style.display = 'none';
+      }
+    });
+    
+    // Get reference to close button
+    var closeBtn = document.getElementById('close-section');
+    
+    // Add click event listener to close button
+    closeBtn.addEventListener('click', function() {
+      hiddenSection.style.display = 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
